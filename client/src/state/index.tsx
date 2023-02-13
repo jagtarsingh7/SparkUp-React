@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface AuthState {
   mode: string;
@@ -10,18 +10,18 @@ interface AuthState {
 }
 
 const initialState: AuthState = {
-  mode: 'light',
+  mode: "light",
   user: null,
   token: null,
   posts: [],
 };
 
 export const authSlice = createSlice({
-  name: 'auth',
+  name: "auth",
   initialState,
   reducers: {
     setMode: (state) => {
-      state.mode = state.mode === 'light' ? 'dark' : 'light';
+      state.mode = state.mode === "light" ? "dark" : "light";
     },
     setLogin: (state, action: PayloadAction<{ user: any; token: string }>) => {
       state.user = action.payload.user;
@@ -31,26 +31,33 @@ export const authSlice = createSlice({
       state.user = null;
       state.token = null;
     },
-    setFriends: (state, action: PayloadAction<{ friends: string[] | null }>) => {
+    setFriends: (
+      state,
+      action: PayloadAction<{ friends: string[] | null }>
+    ) => {
       if (state.user) {
         state.user.friends = action.payload.friends;
       } else {
-        console.error('user friends non-existent :(');
+        console.error("user friends non-existent :(");
       }
     },
     setPosts: (state, action: PayloadAction<{ posts: any[] }>) => {
       state.posts = action.payload.posts;
     },
-    setPost: (state, action: PayloadAction<{ post_id: string; post: string }>) => {
-      const updatePosts = state.posts.map((post) => {
+    setPost: (
+      state,
+      action: PayloadAction<{ post_id: string; post: string }>
+    ) => {
+      const updatedPosts = state.posts.map((post) => {
         if (post._id === action.payload.post_id) return action.payload.post;
         return post;
       });
-      state.posts = updatePosts;
+      state.posts = updatedPosts;
     },
   },
 });
 
-export const { setMode, setLogin, setLogout, setFriends, setPosts, setPost } = authSlice.actions;
+export const { setMode, setLogin, setLogout, setFriends, setPosts, setPost } =
+  authSlice.actions;
 
 export default authSlice.reducer;

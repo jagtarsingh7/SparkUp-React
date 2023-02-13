@@ -1,4 +1,5 @@
 {
     "prettier.semi": true,
-    "prettier.singleQuote": false
+    "prettier.singleQuote": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
 }
