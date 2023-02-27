@@ -9,6 +9,20 @@ interface AuthState {
   posts: any[];
 }
 
+interface SetLoginPayload {
+  user: any;
+  token: string;
+}
+
+interface SetFriendsPayload {
+  friends: string[] | null;
+}
+
+interface SetPostPayload {
+  post_id: string;
+  post: string;
+}
+
 const initialState: AuthState = {
   mode: "light",
   user: null,
@@ -23,7 +37,7 @@ export const authSlice = createSlice({
     setMode: (state) => {
       state.mode = state.mode === "light" ? "dark" : "light";
     },
-    setLogin: (state, action: PayloadAction<{ user: any; token: string }>) => {
+    setLogin: (state, action: PayloadAction<SetLoginPayload>) => {
       state.user = action.payload.user;
       state.token = action.payload.token;
     },
@@ -31,10 +45,7 @@ export const authSlice = createSlice({
       state.user = null;
       state.token = null;
     },
-    setFriends: (
-      state,
-      action: PayloadAction<{ friends: string[] | null }>
-    ) => {
+    setFriends: (state, action: PayloadAction<SetFriendsPayload>) => {
       if (state.user) {
         state.user.friends = action.payload.friends;
       } else {
@@ -44,10 +55,7 @@ export const authSlice = createSlice({
     setPosts: (state, action: PayloadAction<{ posts: any[] }>) => {
       state.posts = action.payload.posts;
     },
-    setPost: (
-      state,
-      action: PayloadAction<{ post_id: string; post: string }>
-    ) => {
+    setPost: (state, action: PayloadAction<SetPostPayload>) => {
       const updatedPosts = state.posts.map((post) => {
         if (post._id === action.payload.post_id) return action.payload.post;
         return post;
