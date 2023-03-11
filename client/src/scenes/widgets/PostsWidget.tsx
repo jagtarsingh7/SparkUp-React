@@ -8,7 +8,7 @@ interface PostsWidgetProps {
     isProfile?: boolean;
   }
 
-  interface RootState {
+  interface RootStateProps {
     posts: {
       _id: string;
       userId: string;
@@ -26,9 +26,10 @@ interface PostsWidgetProps {
 
 const PostsWidget = ({userId,isProfile = false}:PostsWidgetProps) => {
     const dispatch = useDispatch();
-    const posts = useSelector((state:RootState) => state.posts);
-    const token = useSelector((state:RootState) => state.token);
+    const posts = useSelector((state:RootStateProps) => state.posts);
+    const token = useSelector((state:RootStateProps) => state.token);
 
+    console.log(posts);
     const getPosts = async() => {
         const response = await fetch("http://localhost:3001/posts", {
             method: "GET",
@@ -55,7 +56,6 @@ const PostsWidget = ({userId,isProfile = false}:PostsWidgetProps) => {
         }
     },[]); //eslint-disable-line react-hooks/exhaustive-deps
 
-    console.log(posts)
 return(
     <>
     {posts.map(

@@ -19,8 +19,18 @@ interface SetFriendsPayload {
 }
 
 interface SetPostPayload {
-  post_id: string;
-  post: string;
+  post: {
+    _id: string;
+    userId: string;
+    firstName: string;
+    lastName: string;
+    description: string;
+    location: string;
+    picturePath: string;
+    userPicturePath: string;
+    likes: { [userId: string]: boolean };
+    comments: string[];
+  }
 }
 
 const initialState: AuthState = {
@@ -58,7 +68,7 @@ export const authSlice = createSlice({
     setPost: (state, action: PayloadAction<SetPostPayload>) => {
       const updatedPosts = state.posts.map((post) => {
         console.log(action.payload)
-        if (post._id === action.payload.post_id) 
+        if (post._id === action.payload.post._id) 
           return action.payload.post;
         return post;
       });
