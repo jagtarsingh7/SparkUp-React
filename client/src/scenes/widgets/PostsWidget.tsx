@@ -29,7 +29,6 @@ const PostsWidget = ({userId,isProfile = false}:PostsWidgetProps) => {
     const posts = useSelector((state:RootStateProps) => state.posts);
     const token = useSelector((state:RootStateProps) => state.token);
 
-    console.log(posts);
     const getPosts = async() => {
         const response = await fetch("http://localhost:3001/posts", {
             method: "GET",

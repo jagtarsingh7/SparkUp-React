@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 type UserWidgetProps = {
-  userId: number;
+  userId: string;
   picturePath: string;
 };
 

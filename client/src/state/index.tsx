@@ -3,7 +3,14 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface AuthState {
   mode: string;
   user: {
-    friends: string[] | null;
+    friends: {
+      _id: string;
+      firstName: string;
+      lastName: string;
+      occupation: string;
+      location: string;
+      picturePath: string;
+    }[];
   } | null;
   token: string | null;
   posts: any[];
@@ -15,7 +22,14 @@ interface SetLoginPayload {
 }
 
 interface SetFriendsPayload {
-  friends: string[] | null;
+  friends: {
+    _id: string;
+    firstName: string;
+    lastName: string;
+    occupation: string;
+    location: string;
+    picturePath: string;
+  }[];
 }
 
 interface SetPostPayload {
