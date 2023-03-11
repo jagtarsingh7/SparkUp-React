@@ -12,6 +12,20 @@ import { useState } from "react";
 import { useDispatch,useSelector } from "react-redux";
 import {setPost} from "../../state";
 
+interface PostWidgetProps {
+    postId: string;
+    postUserId: string;
+    name: string;
+    description: string;
+    location: string;
+    picturePath: string;
+    userPicturePath: string;
+    likes: { [userId: string]: boolean };
+    comments: string[];
+  }
+  
+
+
 const PostWidget = ({
     postId,
     postUserId,
@@ -22,15 +36,15 @@ const PostWidget = ({
     userPicturePath,
     likes,
     comments,
-  }) => {
+  }: PostWidgetProps) => {
     const [isComments, setIsComments] = useState(false);
     const dispatch = useDispatch();
-    const token = useSelector((state) => state.token);
-    const loggedInUserId = useSelector((state) => state.user._id);
+    const token = useSelector((state:any) => state.token);
+    const loggedInUserId = useSelector((state:any) => state.user._id);
     const isLiked = Boolean(likes[loggedInUserId]);
     const likeCount = Object.keys(likes).length;
   
-    const { palette } = useTheme();
+    const { palette }: any = useTheme();
     const main = palette.neutral.main;
     const primary = palette.primary.main;
   
@@ -44,7 +58,10 @@ const PostWidget = ({
         body: JSON.stringify({ userId: loggedInUserId }),
       });
       const updatedPost = await response.json();
-      dispatch(setPost({ post: updatedPost }));
+      dispatch(setPost({
+          post: updatedPost,
+          post_id: ""
+      }));
     };
   
     return (

@@ -3,10 +3,31 @@ import { useDispatch,useSelector } from "react-redux";
 import {setPosts} from "../../state";
 import PostWidget from "././PostWidget";
 
-const PostsWidget = ({userId,isProfile = false}) => {
+interface PostsWidgetProps {
+    userId: string;
+    isProfile?: boolean;
+  }
+
+  interface RootState {
+    posts: {
+      _id: string;
+      userId: string;
+      firstName: string;
+      lastName: string;
+      description: string;
+      location: string;
+      picturePath: string;
+      userPicturePath: string;
+      likes: { [userId: string]: boolean };
+      comments: string[];
+    }[];
+    token: string;
+  }
+
+const PostsWidget = ({userId,isProfile = false}:PostsWidgetProps) => {
     const dispatch = useDispatch();
-    const posts = useSelector((state) => state.posts);
-    const token = useSelector((state) => state.token);
+    const posts = useSelector((state:RootState) => state.posts);
+    const token = useSelector((state:RootState) => state.token);
 
     const getPosts = async() => {
         const response = await fetch("http://localhost:3001/posts", {
@@ -33,6 +54,8 @@ const PostsWidget = ({userId,isProfile = false}) => {
             getPosts();
         }
     },[]); //eslint-disable-line react-hooks/exhaustive-deps
+
+    console.log(posts)
 return(
     <>
     {posts.map(
@@ -45,7 +68,7 @@ return(
         description,
         location,
         picturePath,
-        usePicturePath,
+        userPicturePath,
         likes,
         comments,
     }) => (
@@ -57,7 +80,7 @@ return(
         description={description}
         location={location}
         picturePath={picturePath}
-        usePicturePath={usePicturePath}
+        userPicturePath={userPicturePath}
         likes={likes}
         comments={comments}
         />
