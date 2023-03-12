@@ -9,7 +9,7 @@ import FriendListWidget from "../widgets/FriendListWidget";
 
 const HomePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
-  const { _id, picturePath } = useSelector((state: any) => state.user);
+  const { _id, picturePath, email } = useSelector((state: any) => state.user);
 
   return (
     <Box>
