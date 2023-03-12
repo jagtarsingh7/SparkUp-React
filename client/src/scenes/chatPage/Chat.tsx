@@ -21,8 +21,6 @@ interface MessageReceive {
 }
 function Chat() {
 
-  var sender;
-  var receiver;
 
   const token = useSelector((state: any) => state.token);
 
@@ -32,9 +30,9 @@ function Chat() {
 
   const [selectedUser, setSelectedUser] = useState<Friend>({
     _id: "1",
-    firstName: "",
-    lastName: "",
-    email: "",
+    firstName: "Sweta",
+    lastName: "Rani Patra",
+    email: "swetarani.patra@gmail.com",
     picturePath: ""
 
   });
@@ -77,15 +75,11 @@ function Chat() {
 
   const handleUserSelect = (friend: Friend) => {
     setSelectedUser(friend);
-
   };
 
   useEffect(() => {
     fetchChat();
-    const timer = setInterval(() => {
-      fetchChat();
-    }, 10000);
-    return () => clearInterval(timer);
+   
   }, [selectedUser]);
 
 

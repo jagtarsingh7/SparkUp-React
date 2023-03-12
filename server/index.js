@@ -14,8 +14,6 @@ import userRoutes from "./routes/users.js";
 import { verifyToken } from "./middleware/auth.js";
 import { createPost } from "./controllers/posts.js";
 import postRoutes from "./routes/posts.js";
-// added by Jagtar
-import chatRoutes from "./routes/chat.js";
 import User from "./models/User.js";
 import Post from "./models/Post.js";
 import { users, posts } from "./dumy-data/data.js";
@@ -54,8 +52,6 @@ app.post("/posts", verifyToken, upload.single("picture"), createPost);
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
-// added by Jagtar
-app.use("/chats", chatRoutes);
 
 // MONGOOSE SETUP
 const PORT = process.env.PORT || 6001;
