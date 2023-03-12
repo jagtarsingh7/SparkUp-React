@@ -30,9 +30,9 @@ function Chat() {
 
   const [selectedUser, setSelectedUser] = useState<Friend>({
     _id: "1",
-    firstName: "Sweta",
-    lastName: "Rani Patra",
-    email: "swetarani.patra@gmail.com",
+    firstName: "",
+    lastName: "",
+    email: "",
     picturePath: ""
 
   });
