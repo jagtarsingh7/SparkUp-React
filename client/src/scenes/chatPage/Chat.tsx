@@ -40,7 +40,7 @@ function Chat() {
   const [userList, setUserList] = useState<Friend[]>([]);
 
   const fetchfriends = async () => {
-    const response = await fetch('http://localhost:3001/users/640c19ab549f7f4c02fc359c/friends', {
+    const response = await fetch(`http://localhost:3001/users/${loggedInUser._id}/friends`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -77,9 +77,13 @@ function Chat() {
     setSelectedUser(friend);
   };
 
+
   useEffect(() => {
     fetchChat();
-   
+    const timer = setInterval(() => {
+      fetchChat();
+    }, 3000);
+    return () => clearInterval(timer);
   }, [selectedUser]);
 
 
