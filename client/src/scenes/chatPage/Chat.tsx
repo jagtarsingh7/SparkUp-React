@@ -45,7 +45,9 @@ function Chat() {
         'Authorization': `Bearer ${token}`
       }
     })
+    
     const result = await response.json();
+    console.log("fetchfriends-->",result)
     setUserList(result);
   };
 
