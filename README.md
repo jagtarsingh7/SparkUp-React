@@ -18,7 +18,6 @@ Deployment
 /createPost
 /getFeedPosts
 /getUserFriends
-FriendListWidget
 PostsWidget
 PostWidget
 
@@ -29,6 +28,7 @@ Theme
 UserSchema
 MyPostsWidget
 profilePage
+FriendListWidget
 
 
 Sandeep:
