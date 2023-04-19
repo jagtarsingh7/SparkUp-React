@@ -11,7 +11,7 @@ Jayesh:
 /login
 Navbar
 UserWidget
-PostWidget
+
 
 Rahul:
 Deployment
@@ -19,7 +19,8 @@ Deployment
 /getFeedPosts
 /getUserFriends
 FriendListWidget
-profilePage
+PostsWidget
+PostWidget
 
 Sweta:
 Theme
@@ -27,7 +28,7 @@ Theme
 /likePost
 UserSchema
 MyPostsWidget
-PostsWidget
+profilePage
 
 
 Sandeep:
