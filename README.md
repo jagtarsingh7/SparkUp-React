@@ -14,17 +14,22 @@ UserWidget
 PostWidget
 
 Rahul:
+Deployment
 /createPost
 /getFeedPosts
+/getUserFriends
 
 Sweta:
+Theme
 /getUserPosts
 /likePost
+UserSchema
 
 Sandeep:
 /getUsers
 postSchema
 
 Jagtar:
-/getUserFriends
-UserSchema
+/chats/receive
+/chats/send
+chatPage
