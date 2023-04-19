@@ -47,6 +47,7 @@
     	<ul>
         	<li>Login/SignUp pages.</li>
             <li>File Upload (Dropzone).</li>
+            <li>UserWidget - Shows user details on the home page and profile page - Profile Picture, Name, Friend Count, Location, etc. </li>
             <li>Navigation Panel.</li>
             <li>Backend routes - /register, /login, File Upload (Multer).</li>
         </ul>
