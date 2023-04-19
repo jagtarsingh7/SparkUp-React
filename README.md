@@ -18,16 +18,21 @@ Deployment
 /createPost
 /getFeedPosts
 /getUserFriends
+FriendListWidget
+profilePage
 
 Sweta:
 Theme
 /getUserPosts
 /likePost
 UserSchema
+MyPostsWidget
+PostsWidget
 
 Sandeep:
 /getUsers
 postSchema
+AdvertWidget
 
 Jagtar:
 /chats/receive
