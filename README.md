@@ -1,5 +1,10 @@
-# react-project-reactive-heads
-react-project-reactive-heads created by GitHub Classroom
+# SparkUp -  Social Media for Millennials
+## Team Members: 
+##### 1) Rahul Tiwari
+##### 2) Sweta Rani Patra
+##### 3) Jayesh Saini
+##### 4) Sandeep Das
+##### 5) Jagtar Singh
 
 Jayesh:
 /register
