@@ -18,7 +18,7 @@ Deployment
 /createPost
 /getFeedPosts
 /getUserFriends
-FriendListWidget
+PostsWidget
 profilePage
 
 Sweta:
@@ -27,7 +27,7 @@ Theme
 /likePost
 UserSchema
 MyPostsWidget
-PostsWidget
+FriendListWidget
 
 Sandeep:
 /getUsers
