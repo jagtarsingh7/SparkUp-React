@@ -1,8 +1,8 @@
 # SparkUp -  Social Media for Millennials
 ## Team Members: 
-##### 1) Rahul Tiwari
+##### 1) Jayesh Saini
 ##### 2) Sweta Rani Patra
-##### 3) Jayesh Saini
+##### 3) Rahul Tiwari
 ##### 4) Sandeep Das
 ##### 5) Jagtar Singh
 
@@ -85,4 +85,4 @@
 
 - Backend: [https://sparkup.azurewebsites.net/](https://sparkup.azurewebsites.net/)
 - React App: [https://sparkup-react.vercel.app/](https://sparkup-react.vercel.app/)
-- Login Credentials: Email -> rahulbt2016@gmail.com, Password-> abc#1234
+- Login Credentials: Email -> jayesh.saini.95@gmail.com, Password-> abc#1234
